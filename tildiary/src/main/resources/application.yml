@@ -1,0 +1,13 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/tildiary?serverTimezone=UTC
+    username: tildiary
+    password: tildiary
+  sql:
+    init:
+      mode: always
+  jpa:
+    generate-ddl: true
+    hibernate:
+      ddl-auto: create
+    show-sql: true
