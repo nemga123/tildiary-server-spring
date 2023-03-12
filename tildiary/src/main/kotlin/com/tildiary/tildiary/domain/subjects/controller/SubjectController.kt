@@ -23,9 +23,9 @@ class SubjectController(
         return subjectService.createSubject(createRequest)
     }
 
-    @GetMapping("/users/{user_id}/}")
-    @ResponseStatus(HttpStatus.NO_CONTENT)
-    fun listSubjects(@PathVariable("user_id") userId: Long): ListResponse<SubjectDto.SubjectDetailResponse> {
+    @GetMapping("/users/{user_id}/")
+    @ResponseStatus(HttpStatus.OK)
+    fun listSubjectsByUser(@PathVariable("user_id") userId: Long): ListResponse<SubjectDto.SubjectDetailResponse> {
         // TODO: permission check
         return subjectService.listSubjects(userId, 1)
     }

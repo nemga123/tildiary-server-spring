@@ -20,9 +20,9 @@ class Subject(
     val author: Long,
 
     @field:NotNull
-    val isOpened: Boolean,
+    @Column(name = "is_opened")
+    val opened: Boolean,
 
     @OneToMany(mappedBy = "subject")
     var tils: MutableList<Til> = mutableListOf(),
-
 ) : BaseTimeEntity()

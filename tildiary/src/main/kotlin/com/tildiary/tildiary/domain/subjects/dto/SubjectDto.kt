@@ -22,7 +22,7 @@ class SubjectDto {
             id = subject.id,
             title = subject.title,
             author = subject.author,
-            isOpened = subject.isOpened,
+            isOpened = subject.opened,
             tilCounts = subject.tils.size,
             createdAt = subject.createdAt,
             updatedAt = subject.updatedAt,

@@ -14,7 +14,7 @@ class SubjectService(
         val subject = Subject(
             title = createSubjectRequest.title,
             author = 1,
-            isOpened = createSubjectRequest.isOpened,
+            opened = createSubjectRequest.isOpened,
         )
         val obj = subjectRepository.save(subject)
         return SubjectDto.SubjectDetailResponse(obj)
