@@ -7,5 +7,5 @@ import org.springframework.boot.runApplication
 class TildiaryApplication
 
 fun main(args: Array<String>) {
-	runApplication<TildiaryApplication>(*args)
+    runApplication<TildiaryApplication>(*args)
 }

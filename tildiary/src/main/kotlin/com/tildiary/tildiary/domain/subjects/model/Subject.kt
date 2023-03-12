@@ -1,22 +1,28 @@
 package com.tildiary.tildiary.domain.subjects.model
 
 import com.tildiary.tildiary.common.model.BaseTimeEntity
-import jakarta.persistence.Entity
-import jakarta.persistence.Table
+import com.tildiary.tildiary.domain.tils.model.Til
 import jakarta.persistence.Column
+import jakarta.persistence.Entity
+import jakarta.persistence.OneToMany
+import jakarta.persistence.Table
+import jakarta.validation.constraints.NotBlank
 import jakarta.validation.constraints.NotNull
 
 @Entity
 @Table
 class Subject(
-    @field:NotNull
-    @Column(length=100)
+    @field:NotBlank
+    @Column(length = 100)
     val title: String,
 
     @field:NotNull
-    val author: Int,
+    val author: Long,
 
     @field:NotNull
-    val is_opened: Boolean,
+    val isOpened: Boolean,
+
+    @OneToMany(mappedBy = "subject")
+    var tils: MutableList<Til> = mutableListOf(),
 
 ) : BaseTimeEntity()
