@@ -14,14 +14,14 @@ import jakarta.validation.constraints.NotNull
 class Subject(
     @field:NotBlank
     @Column(length = 100)
-    val title: String,
+    var title: String,
 
     @field:NotNull
     val author: Long,
 
     @field:NotNull
     @Column(name = "is_opened")
-    val opened: Boolean,
+    var opened: Boolean,
 
     @OneToMany(mappedBy = "subject")
     var tils: MutableList<Til> = mutableListOf(),

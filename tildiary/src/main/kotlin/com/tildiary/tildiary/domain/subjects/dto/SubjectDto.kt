@@ -9,6 +9,11 @@ class SubjectDto {
         val isOpened: Boolean = true,
     )
 
+    data class UpdateSubjectRequest(
+        val title: String?,
+        val isOpened: Boolean?,
+    )
+
     data class SubjectDetailResponse(
         val id: Long,
         val title: String,
