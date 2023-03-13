@@ -34,7 +34,10 @@ class SubjectController(
 
     @PutMapping("/{subject_id}/")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    fun updateSubject(@PathVariable("subject_id") subjectId: Long, @RequestBody updateSubjectRequest: SubjectDto.UpdateSubjectRequest) {
+    fun updateSubject(
+        @PathVariable("subject_id") subjectId: Long,
+        @RequestBody updateSubjectRequest: SubjectDto.UpdateSubjectRequest,
+    ) {
         subjectService.updateSubject(subjectId, updateSubjectRequest)
     }
 

@@ -34,10 +34,10 @@ class SubjectService(
     fun updateSubject(subjectId: Long, updateSubjectRequest: SubjectDto.UpdateSubjectRequest) {
         // TODO: permission check
         val subject = subjectRepository.findByIdOrNull(subjectId)!! // TODO: Exception Handling
-        if(!updateSubjectRequest.title.isNullOrEmpty()) {
+        if (!updateSubjectRequest.title.isNullOrEmpty()) {
             subject.title = updateSubjectRequest.title
         }
-        if(updateSubjectRequest.isOpened != null){
+        if (updateSubjectRequest.isOpened != null) {
             subject.opened = updateSubjectRequest.isOpened
         }
 
